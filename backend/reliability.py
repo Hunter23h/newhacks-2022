@@ -2,9 +2,9 @@ from datetime import datetime
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
-def reliability_scorer():
+def reliability_scorer(url, date1):
     suffix_outof = 1
-    testURL = "https://libguides.uwgb.gov/"
+    #testURL = "https://libguides.uwgb.gov/"
 
     suffixes = {
         ".edu": suffix_outof,
@@ -16,14 +16,14 @@ def reliability_scorer():
         ".net": suffix_outof/2
     }
 
-    pDate = "2022-09-22" #article published date
+    #date1 = "2022-09-22" #article published date
     current_date = date.today()
-    formattedDate = datetime.strptime(pDate, '%Y-%m-%d').date() #convert string to date object, remove if not needed 
+    formattedDate = datetime.strptime(date1, '%Y-%m-%d').date() #convert string to date object, remove if not needed 
 
     suffix_score = -1
     #Suffix scorer
     for value in suffixes:
-        if value in testURL:
+        if value in url:
             suffix_score = suffixes[value]
             break
         else:
@@ -32,7 +32,7 @@ def reliability_scorer():
 
     security_score = -1
     #"Security" scorer
-    if testURL[:5] == "https":
+    if url[:5] == "https":
         security_score = 1
     else:
         security_score = 0
@@ -61,4 +61,3 @@ def reliability_scorer():
     reliability_score = ((suffix_score*10) + (security_score*10) + (date_score)) / 3
     print("reliability score", reliability_score)
 
-reliability_scorer()
