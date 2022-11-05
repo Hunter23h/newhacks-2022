@@ -3,3 +3,4 @@ spacy
 nltk
 bs4
 htmldate
+flask-cors
