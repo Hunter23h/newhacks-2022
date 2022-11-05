@@ -32,6 +32,6 @@ jobs:
 
       - name: Deploy site
         run: ssh my-vps 
-          'chmod +x ${{ secrets.PROJECT_ROOT }}/Newhacks2022/redeploy_site.sh &&
-          ${{ secrets.PROJECT_ROOT }}/Newhacks2022/redeploy_site.sh &&
-          cd ${{ secrets.PROJECT_ROOT }}/Newhacks2022'
+          'chmod +x ${{ secrets.PROJECT_ROOT }}/backend/redeploy_site.sh &&
+          ${{ secrets.PROJECT_ROOT }}/backend/redeploy_site.sh &&
+          cd ${{ secrets.PROJECT_ROOT }}/backend'
