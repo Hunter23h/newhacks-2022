@@ -11,7 +11,6 @@ class Reliability():
         return reliability
     def reliability_scorer(self):
         suffix_outof = 1
-        #testURL = "https://libguides.uwgb.gov/"
 
         suffixes = {
             ".edu": suffix_outof,
@@ -73,6 +72,8 @@ class Reliability():
 
         reliability_score = round(((suffix_score*10) + (security_score*10) + (date_score)) / 3,2)
         #print("reliability score", reliability_score)
-
+        #SPECIAL USE CASE
+        if security_score == 0:
+            return round(reliability_score / 2,2)
 
         return reliability_score
