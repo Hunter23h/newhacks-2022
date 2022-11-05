@@ -1,0 +1,5 @@
+flask
+spacy
+nltk
+bs4
+htmldate
