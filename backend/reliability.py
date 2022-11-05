@@ -23,6 +23,7 @@ class Reliability():
             ".net": suffix_outof/2
         }
 
+
         #WIKIPEDIA SPECIAL SCORE
         if "wikipedia" in self.url:
             return 6.0
@@ -69,7 +70,9 @@ class Reliability():
         #print("date score:", date_score)
 
         #Final reliability score
+
         reliability_score = round(((suffix_score*10) + (security_score*10) + (date_score)) / 3,2)
         #print("reliability score", reliability_score)
+
 
         return reliability_score
