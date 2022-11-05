@@ -1,4 +1,3 @@
-import nltk
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
 
@@ -6,7 +5,6 @@ from citation import Citation
 from summarizer import Summarizer
 from reliability import Reliability
 
-#nltk.download('all')
 
 app = Flask(__name__)
 cors = CORS(app)
