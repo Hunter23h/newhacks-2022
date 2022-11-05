@@ -8,9 +8,15 @@
     height: 100%;
     width: 100%;
     justify-content: center;
+    @media only screen and (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
   }
   h1 {
     grid-column: span 2;
+    @media only screen and (max-width: 900px) {
+      grid-column: span 1;
+    }
   }
   h2 {
     font-size: 1.6rem;
@@ -18,14 +24,14 @@
     text-align: left;
     width: 100%;
   }
-  .data-score{
-    width:40%;
-    margin:auto;
+  .data-score {
+    width: 40%;
+    margin: auto;
   }
-  .reliability-score{
+  .reliability-score {
     position: absolute;
-    top:54%;
-    left:50%;
+    top: 54%;
+    left: 50%;
     font-weight: 500;
     font-size: 1.6rem;
     transform: translate(-50%, -10%);
@@ -37,7 +43,10 @@
   .article-data-summary {
     grid-column: span 2;
     // max-height: 412.317px;
-    height:100%;
+    height: 100%;
+    @media only screen and (max-width: 900px) {
+      grid-column: span 1;
+    }
   }
   .article-data-reliability,
   .article-data-citation,

@@ -5,6 +5,11 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 400px;
     border-radius: 2rem;
+    @media only screen and (max-width: 900px) {
+      width:300px;
+    border-radius: 1.34rem;
+      
+    }
   }
   .landing-page-content {
   }
@@ -12,6 +17,16 @@
     font-size: 3rem;
     font-weight: 300;
     line-height: 60px;
+    @media only screen and (max-width: 900px) {
+      font-size: 2rem;
+      line-height: 40px;
+    
+    }
+  }
+  .br-title{
+    @media only screen and (max-width: 900px) {
+      display:none;
+    }
   }
   p {
     font-weight: 350;

@@ -45,12 +45,11 @@ function LandingPage({sendData, scrollTo}) {
       <img className="mb-10" src={LOGO} alt="Logo" />
       <div className="landing-page-content pb-12">
         <h1 className="text-center">
-          Eliminate Unreliable Sources <br />
+          Eliminate Unreliable Sources <br className="br-title"/>
           and Establish Credibility.
         </h1>
         <p className="text-center text-xl pt-1">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. In aliquid
-          autem facere aut, corrupti quod distinctio voluptatem obcaecati maxime
+          Don't know if article is unreliable? Want a quick summary of the article? Want MLA citation? Paste the link below and get all the answers.
         </p>
       </div>
       <input
