@@ -13,7 +13,7 @@ class Citation():
         date_updated = self.date_finder()
 
         citation = '"' + title + '" ' + publisher + ', ' + date_updated + ', ' + self.url
-        print(citation)
+        return citation
     def date_finder(self):
         try:
             date = find_date(self.url)
@@ -26,6 +26,12 @@ class Citation():
         
         # displaying the title
         data = soup.title.get_text()
-        title = data.rsplit(' ', 2)[0]
-        publisher = data.rsplit(' ', 1)[1]
-        return title, publisher
+        try:
+            title = data.rsplit(' ', 2)[0]
+            publisher = data.rsplit(' ', 1)[1]
+            return title, publisher
+        except:
+            return data, data
+       
+
+url = 'https://en.wikipedia.org/wiki/Foot'
