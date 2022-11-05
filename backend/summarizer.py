@@ -3,6 +3,34 @@ import urllib.request
 import re
 import nltk
 import heapq
+import requests
+from htmldate import find_date
+
+def date_finder(url):
+    try:
+        date = find_date(url)
+        print("Published: ", date)
+    except: 
+        print("Date cannot be found")
+    
+
+def status(url):
+    statuses = {
+    200: "Website Available",
+    301: "Permanent Redirect",
+    302: "Temporary Redirect",
+    404: "Not Found",
+    500: "Internal Server Error",
+    503: "Service Unavailable"
+    }
+
+    try:
+        web_response = requests.get(url)
+        print(url, statuses[web_response.status_code])
+        return web_response.status_code
+    except:
+        print("Website can't be reached")
+        return 0
 
 def summarizer(url):
     scraped_data = urllib.request.urlopen(url)
