@@ -1,8 +1,12 @@
+import nltk
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
+
 from citation import Citation
 from summarizer import Summarizer
+from reliability import Reliability
 
+#nltk.download('all')
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -13,15 +17,17 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 def getdata():
 
     client_data = request.json
+    summary_length = client_data['summarySize']
     print(client_data)
 
     url = client_data['link']
     citation = Citation(url).main() 
-    summary = Summarizer(url).main() 
+    summary = Summarizer(url, summary_length).main() 
+    reliability = Reliability(url, Citation(url).date_finder()).main()
 
     return {
         "summary" : summary,
-        "score" : 5,
+        "score" : reliability,
         "MLA" : citation
     }
 

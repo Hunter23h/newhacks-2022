@@ -6,11 +6,12 @@ import heapq
 import requests
 
 class Summarizer():
-    def __init__(self, url):
+    def __init__(self, url, summary_length):
         self.url = url
+        self.n = summary_length
     def main(self):
         if self.status() == 200:
-            self.summarizer()
+            return self.summarizer()
     def status(self):
         statuses = {
         200: "Website Available",
@@ -79,7 +80,8 @@ class Summarizer():
                         else:
                             sentence_scores[sent] += word_frequencies[word]
 
-        summary_sentences = heapq.nlargest(7, sentence_scores, key=sentence_scores.get)
+        summary_sentences = heapq.nlargest(self.n, sentence_scores, key=sentence_scores.get)
 
         summary = ' '.join(summary_sentences)
-        print(summary)
+        #print(summary)
+        return summary

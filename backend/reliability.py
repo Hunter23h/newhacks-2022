@@ -8,7 +8,7 @@ class Reliability():
         self.date1 = date1
     def main(self):
         reliability = self.reliability_scorer()
-        print(reliability) 
+        return reliability
     def reliability_scorer(self):
         suffix_outof = 1
         #testURL = "https://libguides.uwgb.gov/"
@@ -22,6 +22,10 @@ class Reliability():
             ".com": suffix_outof/2,
             ".net": suffix_outof/2
         }
+
+        #WIKIPEDIA SPECIAL SCORE
+        if "wikipedia" in self.url:
+            return 6.0
 
         #date1 = "2022-09-22" #article published date
         current_date = date.today()
@@ -65,7 +69,7 @@ class Reliability():
         #print("date score:", date_score)
 
         #Final reliability score
-        reliability_score = ((suffix_score*10) + (security_score*10) + (date_score)) / 3
+        reliability_score = round(((suffix_score*10) + (security_score*10) + (date_score)) / 3,2)
         #print("reliability score", reliability_score)
-        return reliability_score
 
+        return reliability_score
