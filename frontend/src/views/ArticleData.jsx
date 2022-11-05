@@ -27,7 +27,7 @@ function ArticleData(props) {
           </div>
         </div>
         <div className="article-data-citation pb-10 col-fs-c">
-          <h2 className="">Citation</h2>
+          <h2 className="">MLA Citation</h2>
           <p className="citation">
             <p>{props.data.MLA}</p>
           </p>
