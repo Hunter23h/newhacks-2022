@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "fetching most recent repository changes..."
-cd /home/opc/deploy-test/Newhacks2022
+cd /home/opc/newhacks-2022/backend
 git pull
 
 echo "Spinning down existing containers to conserve memory..."
