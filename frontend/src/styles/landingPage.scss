@@ -1,0 +1,115 @@
+.landing-page {
+  height: 100%;
+
+  img {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 400px;
+    border-radius: 2rem;
+  }
+  .landing-page-content {
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 60px;
+  }
+  p {
+    font-weight: 350;
+    width: 70%;
+    margin-inline: auto;
+    color: grey;
+  }
+  input {
+    border: solid 3px #00725c;
+    background-color: #d5f5ef;
+    border-radius: 0.6rem;
+    font-size: 1.2rem;
+    width: 85%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    &:focus {
+      outline: none;
+    }
+  }
+  .landing-page-btns {
+    width: 68%;
+  }
+  .landing-page-validate {
+    border: solid 3px #003f96;
+    background-color: #007dda;
+    color: white;
+    border-radius: 0.3rem;
+    font-size: 1.5rem;
+    width: inherit;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  .label {
+  }
+  .landing-page-summary-size {
+    border: solid 3px #00725c;
+    background-color: #d5f5ef;
+    color: black;
+    border-radius: 0.3rem;
+    font-size: 1.5rem;
+    width: inherit;
+    width: 30%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  .landing-page-summary-size-buttons{
+    column-gap: 1rem;
+  }
+  .summary-size-increment {
+    border: solid 3px #003f96;
+    background-color: #80c1f1;
+    color:white;
+    border-radius: .3rem;
+    width: 20%;
+    height: 100%;
+    font-size: 2rem;
+  }
+  .summary-size-decrement {
+    @extend .summary-size-increment;
+  }
+  .dots {
+    column-gap: 0.6rem;
+    border: solid 3px #003f96;
+    background-color: #007dda;
+    color: white;
+    border-radius: 0.3rem;
+    font-size: 1.5rem;
+    width: inherit;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  .dot1 {
+    display: flex;
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: wait 1s linear infinite;
+  }
+  .dot2 {
+    @extend .dot1;
+    animation: wait 1s linear infinite;
+    animation-delay: 0.1s;
+  }
+  .dot3 {
+    @extend .dot1;
+    animation: wait 1s linear infinite;
+    animation-delay: 0.3s;
+  }
+}
+
+@keyframes wait {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
