@@ -32,6 +32,10 @@ button {
 }
 body {
 }
+div{
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
 
 @import "customStyles.scss";
 @import "nav.scss";

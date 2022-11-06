@@ -1,5 +1,6 @@
 .article-data {
   height: 100%;
+
   .article-layout {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -8,6 +9,7 @@
     height: 100%;
     width: 100%;
     justify-content: center;
+
     @media only screen and (max-width: 900px) {
       grid-template-columns: 1fr;
     }
@@ -52,11 +54,12 @@
   .article-data-citation,
   .article-data-summary {
     /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.31);
+    background: rgba(255, 255, 255, 0.54);
+    border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(13px);
-    -webkit-backdrop-filter: blur(13px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14.5px);
+    -webkit-backdrop-filter: blur(14.5px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     align-items: flex-start;
     overflow-y: scroll;
   }

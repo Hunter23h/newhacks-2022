@@ -10,24 +10,29 @@ function App() {
   const sendData = (d) => {
     setData(d);
   };
-  
+
   const scrollTo = (pageId) => {
-    let page = document.getElementById(pageId);
-    scroll.scrollTo(page.offsetTop);
+    setTimeout(() => {
+      let page = document.getElementById(pageId);
+      scroll.scrollTo(page.offsetTop);
+    }, 100);
   };
 
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
   return (
     <div className="App">
       <Margins>
         <section id="landing" className="landing-section col-c-c">
           <LandingPage scrollTo={scrollTo} sendData={sendData} />
         </section>
-        <section id="article" scrollTo={scrollTo} className="article-section">
-          <ArticleData data={data} />
-        </section>
       </Margins>
+      {Object.entries(data).length !== 0 && (
+        <section id="article" scrollTo={scrollTo} className="article-section">
+          <Margins>
+            <ArticleData data={data} />
+          </Margins>
+        </section>
+      )}
     </div>
   );
 }
