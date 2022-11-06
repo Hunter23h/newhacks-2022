@@ -21,11 +21,14 @@ function LandingPage({sendData, scrollTo}) {
         }
       );
       let resData = res.data;
+      console.log(resData);
       sendData(resData);
       setPaused(false);
       scrollTo("article");
     } catch (e) {
       console.log(e);
+      setPaused(false);
+      alert("Website invalid.")
     }
   };
 
