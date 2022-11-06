@@ -52,7 +52,7 @@ function LandingPage({sendData, scrollTo}) {
           and Establish Credibility.
         </h1>
         <p className="text-center text-xl pt-1">
-          Don't know if article is unreliable? Want a quick summary of the article? Want MLA citation? Paste the link below and get all the answers.
+          Don't know if an article is unreliable? Want a quick summary of the article? Want an MLA formatted citation? Paste the link below and get all the answers.
         </p>
       </div>
       <input
