@@ -14,7 +14,7 @@ function LandingPage({sendData, scrollTo}) {
     try {
       setPaused(true);
       let res = await axios.post(
-        "http://127.0.0.1:5001/getdata",
+        "http://linkhack.samthibault.live:5001/getdata",
         {
           link,
           summarySize,
