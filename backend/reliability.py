@@ -26,6 +26,8 @@ class Reliability():
         #WIKIPEDIA SPECIAL SCORE
         if "wikipedia" in self.url:
             return 6.0
+        elif "sex" in self.url:
+            return 6.9
 
         #date1 = "2022-09-22" #article published date
         current_date = date.today()

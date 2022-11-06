@@ -19,9 +19,18 @@ def getdata():
     print(client_data)
 
     url = client_data['link']
-    citation = Citation(url).main() 
-    summary = Summarizer(url, summary_length).main() 
-    reliability = Reliability(url, Citation(url).date_finder()).main()
+
+    try:
+        citation = Citation(url).main() 
+    except:
+        citation = "Citation not available"
+    
+    try:
+        summary = Summarizer(url, summary_length).main() 
+    except:
+        summary = "Summary not available :("
+
+    reliability = Reliability(url, Citation(url).date_finder()).main() 
 
     return {
         "summary" : summary,
