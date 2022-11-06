@@ -1,12 +1,17 @@
-.landing-section{
-    height:100vh;
+.landing-section {
+  min-height: 100vh;
+  @media only screen and (max-width: 900px) {
+    margin: 4rem 0;
+  }
 }
-.article-section{
-    height: 100vh;
-
+.article-section {
+  min-height: 100vh;
+  @media only screen and (max-width: 900px) {
+    margin: 8rem 0 4rem 0;
+  }
 }
-#article{
-    background-image: url("../assets/Background.png");
-    background-size: cover;
-    width:100%;
+#article {
+  background-image: url("../assets/Background.png");
+  background-size: cover;
+  width: 100%;
 }
