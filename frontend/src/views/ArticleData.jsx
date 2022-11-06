@@ -34,9 +34,9 @@ function ArticleData(props) {
         </div>
         <div className="article-data-summary col-fs-c">
           <h2>Article Summary</h2>
-          <p className="summary pb-10">
+          <div className="summary pb-10">
             <p>{props.data.summary}</p>
-          </p>
+          </div>
         </div>
       </div>
     </div>
