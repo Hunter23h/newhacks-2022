@@ -32,9 +32,17 @@ button {
 }
 body {
 }
-div{
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+div {
+  overflow-x: scroll; /* For horiz. scroll, otherwise overflow-y: scroll; */
+
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
+}
+
+
+div::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
 }
 
 @import "customStyles.scss";
