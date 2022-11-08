@@ -5,7 +5,7 @@ WORKDIR /Newhacks2022
 
 # copy the requirements file into the image
 COPY . .
-
+ENV FLASK_APP=server.py
 # install the dependencies and packages in the requirements file
 RUN pip install -r requirements.txt
 
@@ -16,5 +16,4 @@ RUN python -m nltk.downloader stopwords
 # copy every content from the local file to the image
 COPY . /app
 
-RUN export FLASK_APP=server.py
-CMD ["flask", "run" ]
+CMD ["flask", "run", "--host=0.0.0.0" ]
