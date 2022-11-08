@@ -5,9 +5,13 @@ from citation import Citation
 from summarizer import Summarizer
 from reliability import Reliability
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="", static_folder='./build', template_folder='build')
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
+
+@app.route("/", methods=["GET"])
+def frontend():
+    return app.send_static_file('index.html')
 
 
 @app.route("/getdata", methods=["POST"])

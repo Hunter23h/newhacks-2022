@@ -16,5 +16,5 @@ RUN python -m nltk.downloader stopwords
 # copy every content from the local file to the image
 COPY . /app
 
-# configure the container to run in an executed manner
-CMD ["python", "server.py" ]
+RUN export FLASK_APP=server.py
+CMD ["flask", "run" ]

@@ -14,7 +14,7 @@ function LandingPage({sendData, scrollTo}) {
     try {
       setPaused(true);
       let res = await axios.post(
-        "http://127.0.0.1:5001/getdata",
+        "/getdata",
         {
           link,
           summarySize,
