@@ -16,4 +16,3 @@ mv build ../backend/build
 
 echo "Re-building and spinning up application..."
 sudo docker run --name linkhack -p 5001:5000 -d linkhack_image
-sudo docker run -d --name linkhack_frontend -it --rm -v ${PWD}:/app -v /app/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true linkhack_image_frontend
